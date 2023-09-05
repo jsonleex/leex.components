@@ -1,0 +1,13 @@
+{
+  "extends": "@leex/eslint-config",
+  "rules": {
+    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "inline-type-imports"
+      }
+    ]
+  }
+}

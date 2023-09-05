@@ -1,0 +1,70 @@
+{
+  "name": "@leex/components",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.2",
+  "description": "A set of components for Vue3",
+  "author": "leex <jsonleex@163.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jsonleex/leex.components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsonleex/leex.components.git"
+  },
+  "bugs": "https://github.com/jsonleex/leex.components/issues",
+  "keywords": [
+    "vue3",
+    "components"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "unbuild",
+    "build:docs": "vitepress build .",
+    "lint": "eslint .",
+    "release": "bumpp --execute=\"pnpm run release:prepare\" --all",
+    "release:prepare": "pnpm run build",
+    "publish": "tsx scripts/publish.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@leex/eslint-config": "^1.1.0",
+    "@tsconfig/node18": "^18.2.1",
+    "@types/node": "^20.5.9",
+    "@vue/tsconfig": "^0.4.0",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.48.0",
+    "lint-staged": "^14.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "tsx": "^3.12.8",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "vite": "^4.4.9",
+    "vitepress": "1.0.0-rc.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

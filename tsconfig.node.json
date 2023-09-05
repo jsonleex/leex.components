@@ -1,0 +1,9 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "include": ["vite.config.*", "vitest.config.*", "./plugins/**/*.ts", "./scripts/**/*.ts"],
+  "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "node",
+    "types": ["node"]
+  }
+}
