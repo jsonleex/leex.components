@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { pp } from './config'
-defineProps(pp)
 
-console.log(123)
+defineProps(pp)
 </script>
 
 <template>

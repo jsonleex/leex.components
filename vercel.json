@@ -1,0 +1,18 @@
+{
+  "buildCommand": "vitepress build .",
+  "outputDirectory": ".vitepress/dist",
+  "github": {
+    "silent": true
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
