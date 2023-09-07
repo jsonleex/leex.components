@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { type Property } from 'csstype'
+// eslint-disable-next-line import/consistent-type-specifier-style
+import type { Property } from 'csstype'
 
 export interface FlexProps {
   'alignItems'?: Property.AlignItems
