@@ -1,0 +1,6 @@
+{
+  "recommendations": [
+    "cpylua.language-postcss",
+    "stylelint.vscode-stylelint"
+  ]
+}

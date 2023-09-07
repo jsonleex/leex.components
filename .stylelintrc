@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-vue",
+    "stylelint-config-rational-order"
+  ],
+  "rules": {
+    "color-named": "never",
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+    "custom-property-pattern": "xc-.+"
+  },
+  "overrides": [
+    {
+      "files": [".vitepress/**"],
+      "rules": {
+        "custom-property-pattern": "vp|docsearch-.+"
+      }
+    }
+  ]
+}
