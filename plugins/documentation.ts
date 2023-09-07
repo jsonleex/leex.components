@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+import { existsSync, readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { type Plugin } from 'vite'
 
@@ -11,11 +11,12 @@ export function DocumentationHelper(): Plugin {
         return null
       }
 
-      const [scope, name] = id.split('/').slice(-3)
-      const { demo } = await generateExtraParts(scope, name)
+      const [scope, name, i] = id.split('/').slice(-3)
 
-      // TODO: auto insert demo
-      code = code.replace('<!-- @demo -->', demo ?? '')
+      if (scope === 'components' && i === 'index.md') {
+        const { demos } = await generateExtraParts(scope, name)
+        code = `${code}\n\n${demos}`
+      }
 
       return code
     },
@@ -23,35 +24,66 @@ export function DocumentationHelper(): Plugin {
 }
 
 const ROOT = resolve(__dirname, '../')
-const GITHUB_PREFIX = 'https://github.com/jsonleex/leex.components/blob/main/'
 
 async function generateExtraParts(scope: string, name: string) {
-  const GITHUB_URI = `${GITHUB_PREFIX}${scope}/${name}`
-  const dirname = join(ROOT, scope, name)
-
-  const demo = generateDomeSection(dirname, GITHUB_URI)
-
   return {
-    demo,
+    demos: generateDomes(scope, name),
   }
 }
 
-function generateDomeSection(dir: string, baseURI: string) {
-  const path = ['demo.vue', 'demo.client.vue'].find(file => existsSync(join(dir, file)))
+function generateDomes(scope: string, name: string) {
+  const root = join(ROOT, scope, name)
+  const dir = join(root, 'demos')
 
-  if (!path) return
+  if (!existsSync(dir)) {
+    return
+  }
 
-  return [
-    '## Demo',
-    '',
-    '<script setup>',
-    '  import { defineAsyncComponent } from \'vue\'',
-    `  const Demo = defineAsyncComponent(() => import('./${path}'))`,
+  const files = readdirSync(dir)
+    .filter(file => file.endsWith('.vue'))
+
+  if (files.length === 0) {
+    return
+  }
+
+  const imports: string[] = []
+  const content: string[] = []
+
+  while (files.length) {
+    const DemoName = `Demo${files.length}`
+    const file = files.shift() as string
+
+    const title = file
+      .replace('.vue', '')
+      .replace(/^\d+\.(\w)/, (_, $1) => $1.toUpperCase())
+      .replace(/-(\w)/, ($1, $2) => ` ${$2.toUpperCase()}`)
+
+    imports.push(`import ${DemoName} from './demos/${file}'`)
+
+    content.push(
+      `## ${title}`,
+      '',
+      '<DemoContainer>',
+      `  <${DemoName} />`,
+      '</DemoContainer>',
+      '',
+      '::: details Click me to view the code',
+      '::: raw',
+      '',
+      `<<< @/${scope}/${name}/demos/${file}`,
+      '',
+      ':::',
+      '',
+    )
+  }
+
+  const section = [
+    '<script setup lang="ts">',
+    ...imports,
     '</script>',
     '',
-    '<DemoContainer>',
-    `  <p class="demo-source-link"><a href="${baseURI}/${path}" target="_blank">source</a></p>`,
-    '  <Demo />',
-    '</DemoContainer>',
-  ].join('\n')
+    ...content,
+  ]
+
+  return section.join('\n')
 }

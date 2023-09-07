@@ -1,0 +1,20 @@
+.vp-doc h2 {
+  margin-top: 10px;
+  border-top: 0;
+}
+
+.vp-doc a {
+  text-decoration: underline dashed transparent;
+}
+
+.vp-doc a:hover {
+  /* 
+    currentColor or currentcolor?
+    https://github.com/stylelint/stylelint/issues/5863
+  */
+  text-decoration-color: currentcolor;
+}
+
+html.dark {
+  color-scheme: dark;
+}

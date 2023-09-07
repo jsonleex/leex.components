@@ -1,9 +1,10 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["vite.config.*", "vitest.config.*", "./plugins/**/*.ts", "./scripts/**/*.ts"],
+  "include": ["package.json","vite.config.*", "vitest.config.*", "./plugins/**/*.ts", "./scripts/**/*.ts"],
   "compilerOptions": {
     "composite": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "types": ["node"]
   }
 }

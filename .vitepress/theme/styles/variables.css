@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors, selector-class-pattern */
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
@@ -43,7 +45,7 @@
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
@@ -92,7 +94,7 @@
 
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
+  --vp-home-hero-name-background: linear-gradient(
     120deg,
     #bd34fe 30%,
     #41d1ff
@@ -106,13 +108,13 @@
   --vp-home-hero-image-filter: blur(40px);
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   :root {
     --vp-home-hero-image-filter: blur(56px);
   }
 }
 
-@media (min-width: 960px) {
+@media (width >= 960px) {
   :root {
     --vp-home-hero-image-filter: blur(72px);
   }
@@ -136,4 +138,3 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
-

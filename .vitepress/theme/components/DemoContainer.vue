@@ -11,31 +11,22 @@ onErrorCaptured((err) => {
 </script>
 
 <template>
-  <div class="demo">
+  <section class="demo">
     <slot />
-    <div v-if="error" class="error">
+
+    <div v-if="error" class="demo-error">
       {{ error }}
     </div>
-  </div>
+  </section>
 </template>
 
 <style>
 .demo {
-  background: var(--vp-code-block-bg);
-  padding: 2em;
   position: relative;
-  margin-bottom: 10px;
+  margin: 16px 0;
+  padding: 20px 24px;
+  background: var(--vp-code-block-bg);
   border-radius: 8px;
   transition: background-color .5s;
-}
-
-.demo-source-link {
-  color: var(--vp-c-text-2);
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  transition: color .5s
 }
 </style>
