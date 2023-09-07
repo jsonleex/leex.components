@@ -3,7 +3,7 @@ import { type BuildEntry, defineBuildConfig } from 'unbuild'
 const entry: BuildEntry = {
   builder: 'mkdist',
   input: './components',
-  pattern: ['**/*.ts', '**/*.vue'],
+  pattern: ['**/*.{ts,vue,css}', '!_template', '!**/demos'],
 }
 
 export default defineBuildConfig({
@@ -13,5 +13,5 @@ export default defineBuildConfig({
   ],
   clean: true,
   declaration: true,
-  externals: ['vue'],
+  externals: ['vue', '@iconify/vue'],
 })

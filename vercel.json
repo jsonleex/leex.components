@@ -1,5 +1,6 @@
 {
   "buildCommand": "vitepress build .",
+  "ignoreCommand": "node scripts/ignore-build.cjs",
   "outputDirectory": ".vitepress/dist",
   "github": {
     "silent": true
