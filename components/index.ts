@@ -1,6 +1,7 @@
 import { type Plugin } from 'vue'
 import * as components from './components'
 
+export * from './icon'
 export * from './button'
 export * from './flex'
 
