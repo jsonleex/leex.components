@@ -1,4 +1,1 @@
-import Button from './button.vue'
-
-export { Button }
-export { ButtonSize, type ButtonProps } from './config'
+export { default as Button, type ButtonProps, type ButtonColor } from './button.vue'

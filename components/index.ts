@@ -1,3 +1,6 @@
+import './styles/colors.css'
+import './styles/variables.css'
+
 import { type Plugin } from 'vue'
 import * as components from './components'
 

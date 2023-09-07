@@ -1,5 +1,3 @@
 # Button
 
-A Button
-
-<!-- @demo -->
+simple description of the component.

@@ -1,0 +1,48 @@
+:root {
+  --xc-black: hsl(0deg 0% 0%);
+  --xc-white: hsl(0deg 0% 100%);
+
+  --xc-gray-1: hsl(0deg 0% 100%);
+  --xc-gray-2: hsl(0deg 0% 95%);
+  --xc-gray-3: hsl(0deg 0% 90%);
+  --xc-gray-4: hsl(0deg 0% 85%);
+  --xc-gray-5: hsl(0deg 0% 80%);
+  --xc-gray-6: hsl(0deg 0% 75%);
+  --xc-gray-7: hsl(0deg 0% 70%);
+  --xc-gray-8: hsl(0deg 0% 65%);
+  --xc-gray-9: hsl(0deg 0% 60%);
+  --xc-gray-10: hsl(0deg 0% 55%);
+  --xc-gray-11: hsl(0deg 0% 50%);
+  --xc-gray-12: hsl(0deg 0% 45%);
+  --xc-gray-13: hsl(0deg 0% 40%);
+  --xc-gray-14: hsl(0deg 0% 35%);
+  --xc-gray-15: hsl(0deg 0% 30%);
+  --xc-gray-16: hsl(0deg 0% 25%);
+  --xc-gray-17: hsl(0deg 0% 20%);
+  --xc-gray-18: hsl(0deg 0% 15%);
+  --xc-gray-19: hsl(0deg 0% 10%);
+  --xc-gray-20: hsl(0deg 0% 5%);
+}
+
+.dark {
+  --xc-gray-1: hsl(0deg 0% 5%);
+  --xc-gray-2: hsl(0deg 0% 10%);
+  --xc-gray-3: hsl(0deg 0% 15%);
+  --xc-gray-4: hsl(0deg 0% 20%);
+  --xc-gray-5: hsl(0deg 0% 25%);
+  --xc-gray-6: hsl(0deg 0% 30%);
+  --xc-gray-7: hsl(0deg 0% 35%);
+  --xc-gray-8: hsl(0deg 0% 40%);
+  --xc-gray-9: hsl(0deg 0% 45%);
+  --xc-gray-10: hsl(0deg 0% 50%);
+  --xc-gray-11: hsl(0deg 0% 55%);
+  --xc-gray-12: hsl(0deg 0% 60%);
+  --xc-gray-13: hsl(0deg 0% 65%);
+  --xc-gray-14: hsl(0deg 0% 70%);
+  --xc-gray-15: hsl(0deg 0% 75%);
+  --xc-gray-16: hsl(0deg 0% 80%);
+  --xc-gray-17: hsl(0deg 0% 85%);
+  --xc-gray-18: hsl(0deg 0% 90%);
+  --xc-gray-19: hsl(0deg 0% 95%);
+  --xc-gray-20: hsl(0deg 0% 100%);
+}

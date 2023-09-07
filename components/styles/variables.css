@@ -1,0 +1,21 @@
+:root {
+  --xc-font-size: 1em;
+  --xc-font-size-small: 0.75em;
+  --xc-font-size-large: 1.50em;
+  --xc-border-radius: 0.25em;
+
+  --xc-c-text: var(--xc-gray-1);
+  --xc-c-text-hover: var(--xc-gray-1);
+  --xc-c-text-active: var(--xc-gray-1);
+  --xc-c-text-disabled: var(--xc-gray-15);
+  --xc-c-text-inverse: var(--xc-gray-20);
+
+  --xc-c-text-secondary: var(--xc-gray-9);
+  --xc-c-text-secondary-hover: var(--xc-gray-7);
+  --xc-c-text-secondary-active: var(--xc-gray-11);
+
+  --xc-c-background: var(--xc-gray-11);
+  --xc-c-background-hover: var(--xc-gray-9);
+  --xc-c-background-active: var(--xc-gray-13);
+  --xc-c-background-disabled: var(--xc-gray-3);
+}

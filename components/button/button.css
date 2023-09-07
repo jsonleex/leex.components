@@ -1,0 +1,192 @@
+.x-button {
+  --xc-button-color: var(--xc-c-text);
+  --xc-button-color-hover: var(--xc-c-text-hover);
+  --xc-button-color-active: var(--xc-c-text-active);
+  --xc-button-color-disabled: var(--xc-c-text-disabled);
+  --xc-button-background-color: var(--xc-c-background);
+  --xc-button-background-color-hover: var(--xc-c-background-hover);
+  --xc-button-background-color-active: var(--xc-c-background-active);
+  --xc-button-background-color-disabled: var(--xc-c-background-disabled);
+  --xc-button-border-radius: 0;
+
+  position: relative;
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 0.25em 0.25em 0;
+  padding: 0.5em 0.75em;
+  color: var(--xc-button-color);
+  font-size: 1em;
+  font-family: inherit;
+  font-style: normal;
+  line-height: 1em;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: baseline;
+  background-color: var(--xc-button-background-color);
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: var(--xc-button-border-radius);
+  outline: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+  will-change: opacity, color, background-color, box-shadow, background-image;
+  -webkit-tap-highlight-color: transparent
+}
+
+.x-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.1em hsl(0deg 0% 0% / 25%);
+}
+
+.x-button:disabled {
+  color: var(--xc-button-color-disabled);
+  background-color: var(--xc-button-background-color-disabled);
+  pointer-events: none;
+}
+
+.x-button-loading {
+  color: transparent;
+  pointer-events: none;
+
+  &::after,&::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    margin: -0.6em 0 0 -0.6em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-radius: 50%;
+    content: '';
+  }
+  
+  &::before {
+    border-color: rgb(0 0 0 / 15%);
+  }
+
+  &::after{
+    border-color: var(--xc-button-color) transparent transparent;
+    box-shadow: 0 0 0 1px transparent;
+    animation: button-spin .6s linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes button-spin {
+  from {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.x-button:not(:disabled, .x-button-loading, .x-button-outlined):hover {
+  color: var(--xc-button-color-hover);
+  background-color: var(--xc-button-background-color-hover);
+}
+
+.x-button:not(:disabled, .x-button-loading, .x-button-outlined):active {
+  color: var(--xc-button-color-active);
+  background-color: var(--xc-button-background-color-active);
+}
+
+.x-button-primary {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: hsl(240deg 100% 50%);
+  --xc-button-background-color-hover: hsl(240deg 100% 60%);
+  --xc-button-background-color-active: hsl(240deg 100% 40%);
+}
+
+.x-button-secondary {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: var(--xc-gray-9);
+  --xc-button-background-color-hover: var(--xc-gray-7);
+  --xc-button-background-color-active: var(--xc-gray-11);
+}
+
+.x-button-success {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: hsl(120deg 100% 20%);
+  --xc-button-background-color-hover: hsl(120deg 100% 25%);
+  --xc-button-background-color-active: hsl(120deg 100% 15%);
+}
+
+.x-button-danger {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: hsl(0deg 100% 45%);
+  --xc-button-background-color-hover: hsl(0deg 100% 50%);
+  --xc-button-background-color-active: hsl(0deg 100% 40%);
+}
+
+.x-button-warning {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: hsl(45deg 100% 50%);
+  --xc-button-background-color-hover: hsl(45deg 100% 55%);
+  --xc-button-background-color-active: hsl(45deg 100% 45%);
+}
+
+.x-button-info {
+  --xc-button-color: var(--xc-white);
+  --xc-button-color-hover: var(--xc-white);
+  --xc-button-color-active: var(--xc-white);
+  --xc-button-background-color: hsl(210deg 100% 45%);
+  --xc-button-background-color-hover: hsl(210deg 100% 50%);
+  --xc-button-background-color-active: hsl(210deg 100% 40%);
+}
+
+.x-button-rounded {
+  --xc-button-border-radius: 999px;
+}
+
+.x-button-outlined {
+  --xc-button-color: var(--xc-button-background-color);
+  background-color: transparent;
+  border-color: var(--xc-button-background-color);
+}
+
+.x-button-outlined:disabled {
+  color: var(--xc-button-background-color-disabled);
+  background-color: transparent;
+  border-color: var(--xc-button-background-color-disabled);
+}
+
+.x-button-outlined.x-button-loading {
+  color: transparent;
+  background-color: transparent;
+  border-color: var(--xc-button-background-color);
+}
+
+.x-button-outlined:hover {
+  color: var(--xc-button-background-color-hover);
+  background-color: transparent;
+  border-color: var(--xc-button-background-color-hover);
+}
+
+.x-button-outlined:active {
+  color: var(--xc-button-background-color-active);
+  background-color: transparent;
+  border-color: var(--xc-button-background-color-active);
+}
+
+.x-button>.iconify:only-child {
+  margin: 0 -0.25em;
+}

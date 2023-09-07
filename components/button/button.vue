@@ -1,20 +1,35 @@
 <script setup lang="ts">
-import { pp } from './config'
+export type ButtonColor = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'
 
-defineProps(pp)
+export interface ButtonProps {
+  disabled?: boolean
+  loading?: boolean
+  rounded?: boolean
+  outlined?: boolean
+  color?: ButtonColor
+}
+
+withDefaults(defineProps<ButtonProps>(), {
+  disabled: false,
+  loading: false,
+  outlined: false,
+})
 </script>
 
 <template>
-  <button class="x-button" :class="`x-button--${size}`">
+  <button
+    :disabled="disabled" class="x-button" :class="[
+      color && `x-button-${color}`,
+      disabled && 'x-button-disabled',
+      loading && 'x-button-loading',
+      outlined && 'x-button-outlined',
+      rounded && 'x-button-rounded',
+    ]"
+  >
     <slot />
   </button>
 </template>
 
 <style>
-.x-button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid #dcdfe6;
-  background-image: none;
-}
+@import url('./button.css');
 </style>
