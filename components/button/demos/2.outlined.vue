@@ -31,4 +31,13 @@ const colors: ButtonColor[] = ['primary', 'secondary', 'success', 'danger', 'war
       <span>{{ color }}</span>
     </Button>
   </Flex>
+  <Flex>
+    <Button
+      v-for="color in colors" :key="color" :color="color"
+      ghost
+      outlined
+    >
+      <span>{{ color }}</span>
+    </Button>
+  </Flex>
 </template>

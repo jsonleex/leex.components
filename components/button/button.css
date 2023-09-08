@@ -7,7 +7,7 @@
   --xc-button-background-color-hover: var(--xc-c-background-hover);
   --xc-button-background-color-active: var(--xc-c-background-active);
   --xc-button-background-color-disabled: var(--xc-c-background-disabled);
-  --xc-button-border-radius: 0;
+  --xc-button-border-radius: .25em;
 
   position: relative;
   display: inline-flex;
@@ -189,4 +189,10 @@
 
 .x-button>.iconify:only-child {
   margin: 0 -0.25em;
+}
+
+.x-button-ghost {
+  color: var(--xc-c-text-inverse);
+  background-color: transparent;
+  border-color: transparent;
 }

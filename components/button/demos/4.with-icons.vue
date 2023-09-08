@@ -27,5 +27,8 @@ import { Button, Flex, Icon } from '@leex/components'
     <Button rounded>
       <Icon icon="ri:search-line" />
     </Button>
+    <Button rounded ghost>
+      <Icon icon="ri:search-line" />
+    </Button>
   </Flex>
 </template>

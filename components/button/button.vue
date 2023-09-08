@@ -6,6 +6,7 @@ export interface ButtonProps {
   loading?: boolean
   rounded?: boolean
   outlined?: boolean
+  ghost?: boolean
   color?: ButtonColor
 }
 
@@ -24,6 +25,7 @@ withDefaults(defineProps<ButtonProps>(), {
       loading && 'x-button-loading',
       outlined && 'x-button-outlined',
       rounded && 'x-button-rounded',
+      ghost && 'x-button-ghost',
     ]"
   >
     <slot />

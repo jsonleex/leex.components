@@ -19,5 +19,8 @@ import { Button, Flex } from '@leex/components'
     <Button rounded>
       <span>rounded</span>
     </Button>
+    <Button ghost>
+      <span>ghost</span>
+    </Button>
   </Flex>
 </template>
