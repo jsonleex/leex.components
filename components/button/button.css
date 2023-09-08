@@ -89,12 +89,17 @@
   }
 }
 
-.x-button:not(:disabled, .x-button-loading, .x-button-outlined):hover {
+.x-button:not(:disabled, .x-button-loading, .x-button-active, .x-button-outlined):hover {
   color: var(--xc-button-color-hover);
   background-color: var(--xc-button-background-color-hover);
 }
 
-.x-button:not(:disabled, .x-button-loading, .x-button-outlined):active {
+.x-button:not(:disabled, .x-button-loading, .x-button-active, .x-button-outlined):active {
+  color: var(--xc-button-color-active);
+  background-color: var(--xc-button-background-color-active);
+}
+
+.x-button-active {
   color: var(--xc-button-color-active);
   background-color: var(--xc-button-background-color-active);
 }
@@ -151,6 +156,10 @@
   --xc-button-background-color: hsl(210deg 100% 45%);
   --xc-button-background-color-hover: hsl(210deg 100% 50%);
   --xc-button-background-color-active: hsl(210deg 100% 40%);
+}
+
+.x-button-square {
+  --xc-button-border-radius: 0;
 }
 
 .x-button-rounded {

@@ -1,0 +1,25 @@
+.x-button-group {
+  display: inline-flex;
+  gap: 0;
+  margin-right: 0.25em;
+  font-size: 1em;
+
+  .x-button {
+    margin-right: 0;
+    border-radius: 0;
+  }
+
+  .x-button+.x-button {
+    margin-left: -1px;
+  }
+
+  .x-button:first-child {
+    border-top-left-radius: var(--xc-button-border-radius);
+    border-bottom-left-radius: var(--xc-button-border-radius);
+  }
+
+  .x-button:last-child {
+    border-top-right-radius: var(--xc-button-border-radius);
+    border-bottom-right-radius: var(--xc-button-border-radius);
+  }
+}

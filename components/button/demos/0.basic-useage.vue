@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { Button, Flex } from '@leex/components'
+import { ref } from 'vue'
+import { Button, Flex, Icon } from '@leex/components'
+
+const active = ref(true)
 </script>
 
 <template>
@@ -15,6 +18,9 @@ import { Button, Flex } from '@leex/components'
     </Button>
     <Button outlined>
       <span>outlined</span>
+    </Button>
+    <Button :active="active" @click="active = !active">
+      <Icon :icon="active ? 'ri:check-line' : 'ri:close-line'" />
     </Button>
     <Button rounded>
       <span>rounded</span>
