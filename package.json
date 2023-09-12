@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@leex/eslint-config": "^1.1.0",
+    "@nuxt/kit": "^3.7.1",
     "@tsconfig/node18": "^18.2.1",
     "@types/node": "^20.5.9",
     "@vue/tsconfig": "^0.4.0",
