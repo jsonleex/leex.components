@@ -1,7 +1,7 @@
 {
   "name": "@leex/components",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "packageManager": "pnpm@8.6.2",
   "description": "A set of components for Vue3",
   "author": "leex <jsonleex@163.com>",
